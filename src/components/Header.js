@@ -6,7 +6,7 @@ import { Button } from "./Button";
 import styled from "styled-components"
 
 const Nav = styled.nav`
-  background: red;
+  background: transparent;
   height: 80px;
   display: flex;
   justify-content: space-between;
