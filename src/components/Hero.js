@@ -81,6 +81,7 @@ const HeroH1 = styled.h1`
 `
 const HeroP = styled.p`
   font-size: clamp(1rem, 3vw, 3rem);
+  font-weight: 400;
   margin-bottom: 2rem;
 `
 
@@ -100,10 +101,10 @@ export default function Hero() {
       <HeroContent>
         <HeroItems>
           <HeroH1>
-            Test Text
+            Jordan Hunter
           </HeroH1>
           <HeroP>
-            Test Text
+            An avid full-stack developer residing in New York City. 
           </HeroP>
           <Button
             primary="true"
@@ -111,7 +112,7 @@ export default function Hero() {
             round="true"
             to="/portfolio"
           >
-            Test
+            View Portfolio
           </Button>
         </HeroItems>
       </HeroContent>
