@@ -136,7 +136,7 @@ const CustomButton = styled(Button)`
   position: relative;
   font-size: 14px;
   width: 100%;
-  top: -30px;
+  /* top: -30px; */
 
   @media screen and (max-width: 480px) {
     background: none;
