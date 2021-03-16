@@ -110,7 +110,7 @@ export default function Hero() {
             primary="true"
             big="true"
             round="true"
-            to="/portfolio"
+            to="/#portfolio"
           >
             View Portfolio
           </Button>

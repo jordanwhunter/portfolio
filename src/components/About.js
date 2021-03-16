@@ -85,7 +85,7 @@ export default function About() {
   `)
 
   return (
-    <AboutContainer>
+    <AboutContainer id="about">
       <TopLine>
         About Me
       </TopLine>

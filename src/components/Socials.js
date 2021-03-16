@@ -50,7 +50,7 @@ const Title = styled.p`
 `
 export default function Socials() {
   return (
-    <SocialsContainer>
+    <SocialsContainer id="socials">
       <Heading>
         Let's Connect!
       </Heading>

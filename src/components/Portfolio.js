@@ -255,7 +255,7 @@ export default function Portfolio({ heading }) {
   }
 
   return (
-    <PortfolioContainer>
+    <PortfolioContainer  id="portfolio">
       <PortfolioHeading>
         {heading}
       </PortfolioHeading>
