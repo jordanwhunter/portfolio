@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
-import { GrCircleInformation, GrCode, GrOverview } from "react-icons/gr";
+import { GrCircleInformation, GrCode, GrDocumentImage } from "react-icons/gr";
 import styled from "styled-components"
 import Img from "gatsby-image"
 
@@ -11,6 +11,8 @@ const AboutContainer = styled.div`
   color: #000;
   padding: 5rem calc((100vw - 1300px) / 2);
   height: 100%;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
 `
 const TopLine = styled.div`
   color: #077bf1;
@@ -54,9 +56,9 @@ const Biography = styled.div`
 `
 const ColumnTwo = styled.div`
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr;
   margin-top: 2rem;
-  /* grid-gap: 10px; */
+  grid-gap: 10px;
 
   @media screen and (max-width: 500px) {
     grid-template-columns: 1fr;
@@ -65,7 +67,11 @@ const ColumnTwo = styled.div`
 const Image = styled(Img)`
   border-radius: 10px;
   height: 100%;
-  /* margin-top: -20px; */
+  margin-top: -50px;
+
+  @media screen and (max-width: 375px) {
+    margin-top: 0;
+  }
 `
 export default function About() {
   const data = useStaticQuery(graphql`
@@ -91,7 +97,7 @@ export default function About() {
       </TopLine>
       <Description>
         <div css={`display: flex;`}>
-          <GrOverview /><h4 css={`font-style: italic;`}>Resumes</h4>
+          <GrDocumentImage /><h4 css={`font-style: italic;`}>Resumes</h4>
         </div> 
         <div 
           css={`
