@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { socialData } from "../data/SocialData"
 
 const SocialsContainer = styled.div`
   width: 100%;
@@ -7,7 +8,7 @@ const SocialsContainer = styled.div`
   color: #000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   padding: 4rem calc((100vw - 1300px) / 2);
 `
 const Heading = styled.h1`
@@ -18,7 +19,7 @@ const Heading = styled.h1`
 `
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat (4, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 
   @media screen and (max-width: 768px) {
@@ -29,7 +30,24 @@ const Wrapper = styled.div`
     grid-template-columns: 1fr;
   }
 `
-
+const SocialsBox = styled.div`
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+`
+const Icon = styled.div`
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: black;
+`
+const Title = styled.p`
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 0.5rem;
+  margin-left: 10px;
+`
 export default function Socials() {
   return (
     <SocialsContainer>
@@ -37,7 +55,19 @@ export default function Socials() {
         Let's Connect!
       </Heading>
       <Wrapper>
-
+        {socialData.map((item, index) => {
+          return (
+            <SocialsBox key={index}>
+              <a 
+                href={item.src} 
+                target="_blank"
+              >
+                <Icon>{item.icon}</Icon>
+              </a>
+                <Title>{item.title}</Title>
+            </SocialsBox>
+          )
+        })}
       </Wrapper>
     </SocialsContainer>
   )
