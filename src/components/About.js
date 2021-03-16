@@ -55,7 +55,7 @@ const Biography = styled.div`
 const ColumnTwo = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
   /* grid-gap: 10px; */
 
   @media screen and (max-width: 500px) {
@@ -132,6 +132,7 @@ export default function About() {
           {data.allFile.edges.map((image, key) => (
             <Image 
               key={key}
+              src={image.node.childImageSharp.src}
               fluid={image.node.childImageSharp.fluid}
             />
           ))}
