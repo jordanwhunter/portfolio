@@ -121,7 +121,8 @@ const ButtonWrap = styled.div`
   align-items: center;
   width: 100%;
   height: -400px;
-  z-index: 2;
+  z-index: 1;
+  gap: 10px;
 
   @media screen and (max-width: 280px) {
     padding: 0 1rem;
@@ -133,9 +134,9 @@ const CustomButton = styled(Button)`
   display: flex;
   align-items: center;
   position: relative;
-  top: -60px;
   font-size: 14px;
   width: 100%;
+  top: -30px;
 
   @media screen and (max-width: 480px) {
     background: none;
