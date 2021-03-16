@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Button } from "./Button"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -23,10 +23,6 @@ const PortfolioImg = styled(Img)`
   border-radius: 10px;
   filter: brightness(100%);
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-  /* &:hover {
-    filter: brightness(50%)
-  } */
 `
 const PortfolioWrapper = styled.div`
   display: grid;
@@ -112,7 +108,7 @@ const PortfolioTechnologies = styled.div`
     font-size: 12px;
   }
 `
-const ButtonLink = styled(Link)`
+const ButtonLink = styled.a`
   text-decoration: none;
   cursor: pointer;
 `
@@ -224,7 +220,7 @@ export default function Portfolio({ heading }) {
             </TextWrap>
             <ButtonWrap>
               <ButtonLink
-                to={`${item.node.demo}`}
+                href={`${item.node.demo}`}
                 target="_blank"
               >
                 <CustomButton
@@ -235,7 +231,7 @@ export default function Portfolio({ heading }) {
                 </CustomButton>
               </ButtonLink>
               <ButtonLink
-                to={`${item.node.repo}`}
+                href={`${item.node.repo}`}
                 target="_blank"
               >
                 <CustomButton
