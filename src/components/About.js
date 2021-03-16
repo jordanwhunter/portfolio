@@ -54,7 +54,7 @@ const Biography = styled.div`
 `
 const ColumnTwo = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 100%;
   margin-top: 2rem;
   /* grid-gap: 10px; */
 

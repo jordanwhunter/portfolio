@@ -232,7 +232,7 @@ export default function Portfolio({ heading }) {
                   {item.node.button1}
                 </CustomButton>
               </ButtonLink>
-              
+
               <ButtonLink
                 href={`${item.node.repo}`}
                 target="_blank"
@@ -250,7 +250,7 @@ export default function Portfolio({ heading }) {
       )
     })
 
-    return portfolioArray
+    return portfolioArray;
   }
 
   return (
