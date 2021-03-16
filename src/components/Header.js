@@ -1,9 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { FaBars } from "react-icons/fa"
-import { menuData } from "../data/MenuData";
-import { Button } from "./Button";
+import { menuData } from "../data/MenuData"
+import { Button } from "./Button"
 import styled from "styled-components"
+import signature from "../assets/images/signature.png"
 
 const Nav = styled.nav`
   background: transparent;
@@ -59,17 +60,27 @@ const NavBtn = styled.div`
 const Header = () => {
   return (
     <Nav>
-      <NavLink to="/">Jordan W. Hunter</NavLink>
+      <NavLink to="/">
+        <img 
+          src={signature}
+          css={`
+            width: 75px;
+            margin-left: 20px;
+          `} 
+        />
+      </NavLink>
       <Bars />
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index}>
+          <NavLink to={`/#${item.link}`} key={index}>
             {item.title}
           </NavLink>
         ))}
       </NavMenu>
       <NavBtn>
-        <Button primary="true" round="true" to="/contact">Email Me</Button>
+        <a href="mailto:jordanwhunter.mail@gmail.com" target="_blank" css={`text-decoration: none;`}>
+          <Button primary="true" round="true">Email Me</Button>
+        </a>
       </NavBtn>
     </Nav>
   )
