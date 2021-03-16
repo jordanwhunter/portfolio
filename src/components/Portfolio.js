@@ -11,7 +11,7 @@ const PortfolioContainer = styled.div`
   color: #fff;
 `
 const PortfolioHeading = styled.div`
-  font-size: clamp(1.2rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   text-align: center;
   margin-bottom: 5rem;
   color: #000;
@@ -152,6 +152,9 @@ const CustomButton = styled(Button)`
     justify-content: center;
   }
 `
+const CustomP = styled.p`
+  font-size: 12px;
+`
 
 export default function Portfolio({ heading }) {
   const data = useStaticQuery(graphql`
@@ -257,6 +260,7 @@ export default function Portfolio({ heading }) {
     <PortfolioContainer  id="portfolio">
       <PortfolioHeading>
         {heading}
+        <CustomP>(Tap on Mobile)</CustomP>
       </PortfolioHeading>
       <PortfolioWrapper>
         {getPortfolio(data)}
