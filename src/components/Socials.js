@@ -52,7 +52,7 @@ export default function Socials() {
   return (
     <SocialsContainer id="socials">
       <Heading>
-        Let's Connect!
+        <u>Stay Connected</u>
       </Heading>
       <Wrapper>
         {socialData.map((item, index) => {
