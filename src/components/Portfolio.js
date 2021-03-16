@@ -136,7 +136,8 @@ const CustomButton = styled(Button)`
   position: relative;
   font-size: 14px;
   width: 100%;
-  /* top: -30px; */
+  cursor: pointer;
+  top: -60px;
 
   @media screen and (max-width: 480px) {
     background: none;
@@ -231,6 +232,7 @@ export default function Portfolio({ heading }) {
                   {item.node.button1}
                 </CustomButton>
               </ButtonLink>
+              
               <ButtonLink
                 href={`${item.node.repo}`}
                 target="_blank"
