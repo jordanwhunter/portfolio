@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FaBars } from "react-icons/fa"
 import { menuData } from "../data/MenuData"
@@ -24,9 +24,15 @@ const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
 `
+const SigImg = styled.img`
+  width: 75px;
+  margin-left: 20px;
+`
 const Bars = styled(FaBars)`
   display: none;
   color: #fff;
+  position: fixed;
+  z-index: 5;
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -37,6 +43,44 @@ const Bars = styled(FaBars)`
     font-size: 1.8rem;
     cursor: pointer;
   }
+`
+const MenuLinks = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50vh;
+  width: 100vw;
+  background: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: ${
+    ({nav}) => nav
+      ? "translateX(0)"
+      : "translateX(100%)"
+  };
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-top: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 300ms;
+
+    :hover {
+      color: gray;
+    }
+  }
+
 `
 const NavMenu = styled.div`
   display: flex;
@@ -58,18 +102,30 @@ const NavBtn = styled.div`
 `
 
 const Header = () => {
+  const [nav, showNav] = useState(false);
+
   return (
     <Nav>
       <NavLink to="/">
-        <img 
-          src={signature}
-          css={`
-            width: 75px;
-            margin-left: 20px;
-          `} 
-        />
+        <SigImg src={signature} />
       </NavLink>
-      <Bars />
+      <Bars onClick={() => showNav(!nav)}/>
+      <MenuLinks nav={nav}>
+        <ul>
+          <li>
+            <a href="/#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a href="/#about">About</a>
+          </li>
+          <li>
+            <a href="/#socials">Socials</a>
+          </li>
+          <li>
+            <a href="/#newsletter">Newsletter</a>
+          </li>
+        </ul>
+      </MenuLinks>
       <NavMenu>
         {menuData.map((item, index) => (
           <NavLink to={`/#${item.link}`} key={index}>
