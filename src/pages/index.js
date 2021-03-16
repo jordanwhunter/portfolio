@@ -3,12 +3,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/Hero"
 import Portfolio from "../components/Portfolio"
+import About from "../components/About"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Hero />
-    <Portfolio heading="My Current Projects"/>
+    <Portfolio heading="Portfolio" />
+    <About />
   </Layout>
 )
 
