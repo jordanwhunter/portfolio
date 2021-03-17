@@ -5,6 +5,7 @@ import { menuData } from "../data/MenuData"
 import { Button } from "./Button"
 import styled from "styled-components"
 import signature from "../assets/images/signature.png"
+import video from "../assets/videos/hero-video.mp4"
 
 const Nav = styled.nav`
   background: transparent;
@@ -44,6 +45,24 @@ const Bars = styled(FaBars)`
     cursor: pointer;
   }
 `
+const HeroBG = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`
+const Video = styled.video`
+  width: 100%;
+  height: 100%; 
+  -o-object-fit: cover;
+  object-fit: cover;
+  filter: brightness(100%);
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+`
 const MenuLinks = styled.nav`
   display: flex;
   flex-direction: column;
@@ -52,7 +71,7 @@ const MenuLinks = styled.nav`
   text-align: center;
   height: 50vh;
   width: 100vw;
-  background: #143441;
+  background: transparent;
   position: absolute;
   top: 0;
   right: 0;
@@ -64,6 +83,10 @@ const MenuLinks = styled.nav`
 
   ul {
     list-style-type: none;
+    z-index: 5;
+    &:hover ${HeroBG} {
+      filter: brightness(50%)
+    }
   }
 
   li {
@@ -76,9 +99,15 @@ const MenuLinks = styled.nav`
     font-size: 1.5rem;
     transition: color 300ms;
 
+    
+
     :hover {
       color: gray;
     }
+  }
+
+  @media screen and (min-width: 769px) {
+    display: none;
   }
 
 `
@@ -111,6 +140,16 @@ const Header = () => {
       </NavLink>
       <Bars onClick={() => showNav(!nav)}/>
       <MenuLinks nav={nav}>
+        <HeroBG>
+          <Video
+            src={video}
+            type="video/mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </HeroBG>
         <ul>
           <li>
             <a href="/#portfolio">Portfolio</a>
