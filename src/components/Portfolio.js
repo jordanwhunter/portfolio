@@ -9,13 +9,13 @@ const PortfolioContainer = styled.div`
   padding: 5rem calc((100vw - 1300px) / 2);
   background: #fff;
   color: #fff;
-`
+`;
 const PortfolioHeading = styled.div`
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   text-align: center;
   margin-bottom: 5rem;
   color: #000;
-`
+`;
 const PortfolioImg = styled(Img)`
   height: 100%;
   max-width: 100%;
@@ -23,7 +23,7 @@ const PortfolioImg = styled(Img)`
   border-radius: 10px;
   filter: brightness(100%);
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-`
+`;
 const PortfolioWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -33,13 +33,13 @@ const PortfolioWrapper = styled.div`
 
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
-  }
+  };
   
   @media screen and (max-width: 868px) {
     grid-template-columns: 1fr;
-  }
+  };
 
-`
+`;
 const PortfolioInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,8 +56,8 @@ const PortfolioInfo = styled.div`
     padding: 0 1rem;
     justify-content: center;
     align-content: center;
-  }
-`
+  };
+`;
 const PortfolioCard = styled.div`
   line-height: 2;
   width: 100%;
@@ -69,11 +69,11 @@ const PortfolioCard = styled.div`
   &:hover ${PortfolioInfo}{
     visibility: visible;
     opacity: 1;
-  }
+  };
   &:hover ${PortfolioImg}{
     filter: brightness(50%)
-  }
-`
+  };
+`;
 const TextWrap = styled.div`
   display: flex;
   align-items: center;
@@ -84,7 +84,7 @@ const TextWrap = styled.div`
   justify-content: center;
   align-content: center;
   width: 87%;
-`
+`;
 const PortfolioTitle = styled.div`
   font-weight: 400;
   font-size: 1rem;
@@ -92,26 +92,26 @@ const PortfolioTitle = styled.div`
 
   @media screen and (max-width: 280px) {
     font-size: 12px;
-  }
-`
+  };
+`;
 const PortfolioDescription = styled.div`
   font-size: 1rem;
 
   @media screen and (max-width: 280px) {
     font-size: 12px;
-  }
-`
+  };
+`;
 const PortfolioTechnologies = styled.div`
   font-size: 1rem;
 
   @media screen and (max-width: 280px) {
     font-size: 12px;
-  }
-`
+  };
+`;
 const ButtonLink = styled.a`
   text-decoration: none;
   cursor: pointer;
-`
+`;
 const ButtonWrap = styled.div`
   display: flex;
   flex-direction: row;
@@ -128,8 +128,8 @@ const ButtonWrap = styled.div`
     padding: 0 1rem;
     justify-content: center;
     align-content: center;
-  }
-`
+  };
+`;
 const CustomButton = styled(Button)`
   display: flex;
   align-items: center;
@@ -150,11 +150,11 @@ const CustomButton = styled(Button)`
     width: 100%;
     font-size: 12px;
     justify-content: center;
-  }
-`
+  };
+`;
 const CustomP = styled.p`
   font-size: 12px;
-`
+`;
 
 export default function Portfolio({ heading }) {
   const data = useStaticQuery(graphql`
@@ -181,7 +181,7 @@ export default function Portfolio({ heading }) {
         } 
       }
     }
-  `)
+  `);
 
   function getPortfolio(data) {
     const portfolioArray = []
@@ -254,7 +254,7 @@ export default function Portfolio({ heading }) {
     })
 
     return portfolioArray;
-  }
+  };
 
   return (
     <PortfolioContainer  id="portfolio">
@@ -266,5 +266,5 @@ export default function Portfolio({ heading }) {
         {getPortfolio(data)}
       </PortfolioWrapper>
     </PortfolioContainer>
-  )
+  );
 };
