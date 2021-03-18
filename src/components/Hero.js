@@ -31,8 +31,8 @@ const HeroContainer = styled.div`
       rgba(0, 0, 0, 0.2) 0%, 
       transparent 100%
     );
-  }
-`
+  };
+`;
 const HeroBG = styled.div`
   position: absolute;
   top: 0;
@@ -42,19 +42,19 @@ const HeroBG = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-`
+`;
 const Video = styled.video`
   width: 100%;
   height: 100%; 
   -o-object-fit: cover;
   object-fit: cover;
-`
+`;
 const HeroContent = styled.div`
   z-index: 3;
   height: calc(100vh - 80px);
   max-height: 100%;
   padding: 0rem calc((100vh - 1300px) / 2);
-`
+`;
 const HeroItems = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ const HeroItems = styled.div`
   color: #fff;
   line-height: 1.1;
   font-weight: bold; 
-`
+`;
 const HeroH1 = styled.h1`
   /* clamp essentially makes fonts responsive w/out adding media queries */
   /* first value (1.5rem) is smallest font will be */
@@ -78,12 +78,12 @@ const HeroH1 = styled.h1`
   letter-spacing: 3px;
   font-weight: bold;
   padding: 0 1rem;
-`
+`;
 const HeroP = styled.p`
   font-size: clamp(1rem, 3vw, 3rem);
   font-weight: 400;
   margin-bottom: 2rem;
-`
+`;
 
 export default function Hero() {
   return (
