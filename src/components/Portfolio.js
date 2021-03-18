@@ -108,10 +108,10 @@ const PortfolioTechnologies = styled.div`
     font-size: 12px;
   };
 `;
-// const ButtonLink = styled.a`
-//   text-decoration: none;
-//   cursor: pointer;
-// `;
+const ButtonLink = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+`;
 const ButtonWrap = styled.div`
   display: flex;
   flex-direction: row;
@@ -192,10 +192,12 @@ export default function Portfolio({ heading }) {
             src={item.node.img.childImageSharp.fluid.src}
             fluid={item.node.img.childImageSharp.fluid}
             alt={item.node.alt}
+            key={index}
           />
-          <PortfolioInfo>
-            <TextWrap>
+          <PortfolioInfo key={index}>
+            <TextWrap key={index}>
               <PortfolioTitle
+                key={index}
                 css={`
                   margin-top: -500px;
                 `}
@@ -205,6 +207,7 @@ export default function Portfolio({ heading }) {
               </PortfolioTitle>
 
               <PortfolioDescription
+                key={index}
                 css={`
                   margin-top: -300px;
                   
@@ -214,6 +217,7 @@ export default function Portfolio({ heading }) {
                 {item.node.description}
               </PortfolioDescription>
               <PortfolioTechnologies
+                key={index}
                 css={`
                   margin-top: -100px;
                  
@@ -223,12 +227,13 @@ export default function Portfolio({ heading }) {
                 {item.node.technologies}
               </PortfolioTechnologies>
             </TextWrap>
-            <ButtonWrap>
-              {/* <ButtonLink
+            <ButtonWrap key={index}>
+              <ButtonLink
                 href={`${item.node.demo}`}
                 target="_blank"
-              > */}
-              <a
+                key={index}
+              >
+              {/* <a
                 href={`${item.node.demo}`}
                 target="_blank"
                 css={`
@@ -236,22 +241,24 @@ export default function Portfolio({ heading }) {
                   cursor: pointer;
                 `}
                 key={Math.random()}
-              >
+              > */}
                 <CustomButton
                   primary="true"
                   round="true"
+                  key={index}
                 >
                   {item.node.button1}
                 </CustomButton>
-              </a>
-              {/* </ButtonLink> */}
+              {/* </a> */}
+              </ButtonLink>
 
 
-              {/* <ButtonLink
+              <ButtonLink
                 href={`${item.node.repo}`}
                 target="_blank"
-              > */}
-              <a
+                key={index}
+              >
+              {/* <a
                 href={`${item.node.repo}`}
                 target="_blank"
                 css={`
@@ -259,15 +266,16 @@ export default function Portfolio({ heading }) {
                   cursor: pointer;
                 `}
                 key={Math.random()}
-              >
+              > */}
                 <CustomButton
                   primary="true"
                   round="true"
+                  key={index}
                 >
                   {item.node.button2}
                 </CustomButton>
-              </a>
-              {/* </ButtonLink> */}
+              {/* </a> */}
+              </ButtonLink>
             </ButtonWrap>
           </PortfolioInfo>
         </PortfolioCard>
