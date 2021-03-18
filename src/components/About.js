@@ -139,8 +139,9 @@ export default function About() {
         </ColumnOne>
         <ColumnTwo key={id + 7}>
           {data.allFile.edges.map((image, key) => (
-            <Image 
-              key={key}
+            <Image
+              id={key} 
+              key={id + 15}
               src={image.node.childImageSharp.src}
               fluid={image.node.childImageSharp.fluid}
             />
