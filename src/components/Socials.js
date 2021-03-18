@@ -10,13 +10,13 @@ const SocialsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 4rem calc((100vw - 1300px) / 2);
-`
+`;
 const Heading = styled.h1`
   text-align: start;
   font-size: clamp(1.5rem, 5vw, 2rem);
   margin-bottom: 3rem;
   padding: 0 2rem;
-`
+`;
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -24,12 +24,12 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-  }
+  };
   
   @media screen and (max-width: 500px) {
     grid-template-columns: 1fr;
-  }
-`
+  };
+`;
 const SocialsBox = styled.div`
   height: 100%;
   width: 100%;
@@ -37,17 +37,17 @@ const SocialsBox = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
-`
+`;
 const Icon = styled.div`
   font-size: 3rem;
   margin-bottom: 1rem;
   color: black;
-`
+`;
 const Title = styled.p`
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   margin-bottom: 0.5rem;
   margin-left: 10px;
-`
+`;
 export default function Socials() {
   return (
     <SocialsContainer id="socials">
