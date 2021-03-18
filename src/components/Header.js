@@ -173,7 +173,7 @@ const Header = () => {
         ))}
       </NavMenu>
       <NavBtn>
-        <a href="mailto:jordanwhunter.mail@gmail.com" target="_blank" css={`text-decoration: none;`}>
+        <a href="mailto:jordanwhunter.mail@gmail.com" target="_blank" rel="noreferrer" css={`text-decoration: none;`}>
           <Button primary="true" round="true">Email Me</Button>
         </a>
       </NavBtn>
