@@ -48,4 +48,4 @@ export const Button = styled(Link)`
   text-decoration: none;
   transition: 0.3s !important;
   cursor: pointer;
-`
+`;
