@@ -107,14 +107,14 @@ export default function About() {
           `}
         >
           <p>
-            <a href="https://docs.google.com/document/d/162ZfqqYxwYgeaY4fk7pf3GdtVn_Kp-ONqWOVCWzIhqo/edit?usp=sharing" target="_blank">Resume 2021 (ATS Version)</a><br />
-            <a href="https://docs.google.com/document/d/1u87owpbLG2uoPAqvoVmkuh_LEGSJuRa69OVAYm3hELU/edit?usp=sharing" target="_blank">Resume 2021 (Styled Version)</a>
+            <a href="https://docs.google.com/document/d/162ZfqqYxwYgeaY4fk7pf3GdtVn_Kp-ONqWOVCWzIhqo/edit?usp=sharing" target="_blank" rel="noreferrer">Resume 2021 (ATS Version)</a><br />
+            <a href="https://docs.google.com/document/d/1u87owpbLG2uoPAqvoVmkuh_LEGSJuRa69OVAYm3hELU/edit?usp=sharing" target="_blank" rel="noreferrer">Resume 2021 (Styled Version)</a>
           </p>
         </div>   
       </Description>
       <ContentWrapper>
-        <ColumnOne>
-          <Biography>
+        <ColumnOne key={1}>
+          <Biography key={1}>
             <div css={`display: flex;`}>
               <GrCircleInformation /><h3>Brand Statement</h3>
             </div>
@@ -123,7 +123,7 @@ export default function About() {
               Full stack web/software developer with an entrepreneurial spirit, and keen sense of efficiency and time management. A passionate, goal-oriented team player that strives to always write clean, precise code focused on mobile responsive themes. Maintains a problem solving, can-do attitude and exhibits consistent eagerness to learn new technologies/techniques.
             </p>
           </Biography>
-          <Biography>
+          <Biography key={2}>
             <div css={`display: flex;`}>
               <GrCode />
               <h3>Technologies</h3>
@@ -134,7 +134,7 @@ export default function About() {
             </p>
           </Biography>
         </ColumnOne>
-        <ColumnTwo>
+        <ColumnTwo key={2}>
           {data.allFile.edges.map((image, key) => (
             <Image 
               key={key}
