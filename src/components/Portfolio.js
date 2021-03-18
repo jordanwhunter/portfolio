@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { Button } from "./Button"
+// import { v4 as uuidv4} from "uuid"
 import Img from "gatsby-image"
 import styled from "styled-components"
 
@@ -183,6 +184,8 @@ export default function Portfolio({ heading }) {
     }
   `);
 
+  const id = '_' + Math.random().toString(36).substr(2, 9) + 1;
+
   function getPortfolio(data) {
     const portfolioArray = []
     data.allPortfolioJson.edges.forEach((item, index) => {
@@ -192,12 +195,12 @@ export default function Portfolio({ heading }) {
             src={item.node.img.childImageSharp.fluid.src}
             fluid={item.node.img.childImageSharp.fluid}
             alt={item.node.alt}
-            key={index}
+            key={id + 8}
           />
-          <PortfolioInfo key={index}>
-            <TextWrap key={index}>
+          <PortfolioInfo key={id + 9}>
+            <TextWrap key={id + 14}>
               <PortfolioTitle
-                key={index}
+                key={id + 15}
                 css={`
                   margin-top: -500px;
                 `}
@@ -207,7 +210,7 @@ export default function Portfolio({ heading }) {
               </PortfolioTitle>
 
               <PortfolioDescription
-                key={index}
+                key={id + 16}
                 css={`
                   margin-top: -300px;
                   
@@ -217,7 +220,7 @@ export default function Portfolio({ heading }) {
                 {item.node.description}
               </PortfolioDescription>
               <PortfolioTechnologies
-                key={index}
+                key={id + 17}
                 css={`
                   margin-top: -100px;
                  
@@ -227,11 +230,11 @@ export default function Portfolio({ heading }) {
                 {item.node.technologies}
               </PortfolioTechnologies>
             </TextWrap>
-            <ButtonWrap key={index}>
+            <ButtonWrap key={id + 10}>
               <ButtonLink
                 href={`${item.node.demo}`}
                 target="_blank"
-                key={index}
+                key={id + 11}
               >
               {/* <a
                 href={`${item.node.demo}`}
@@ -245,7 +248,7 @@ export default function Portfolio({ heading }) {
                 <CustomButton
                   primary="true"
                   round="true"
-                  key={index}
+                  key={id + 12}
                 >
                   {item.node.button1}
                 </CustomButton>
@@ -256,7 +259,7 @@ export default function Portfolio({ heading }) {
               <ButtonLink
                 href={`${item.node.repo}`}
                 target="_blank"
-                key={index}
+                key={id + 13}
               >
               {/* <a
                 href={`${item.node.repo}`}
@@ -270,7 +273,7 @@ export default function Portfolio({ heading }) {
                 <CustomButton
                   primary="true"
                   round="true"
-                  key={index}
+                  key={id + 14}
                 >
                   {item.node.button2}
                 </CustomButton>

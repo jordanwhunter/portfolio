@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
-import { GrCircleInformation, GrCode, GrDocumentImage } from "react-icons/gr";
+import { GrCircleInformation, GrCode, GrDocumentImage } from "react-icons/gr"
+// import { v4 as uuidv4} from "uuid"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
@@ -89,13 +90,15 @@ export default function About() {
       }
     }
   `);
+  
+  const id = '_' + Math.random().toString(36).substr(2, 9);
 
   return (
     <AboutContainer id="about">
-      <TopLine>
+      <TopLine key={id + 1}>
         About Me
       </TopLine>
-      <Description>
+      <Description key={id + 2}>
         <div css={`display: flex;`}>
           <GrDocumentImage /><h4 css={`font-style: italic;`}>Resumes</h4>
         </div> 
@@ -112,9 +115,9 @@ export default function About() {
           </p>
         </div>   
       </Description>
-      <ContentWrapper>
-        <ColumnOne key={1}>
-          <Biography key={1}>
+      <ContentWrapper key={id + 3}>
+        <ColumnOne key={id + 4}>
+          <Biography key={id + 5}>
             <div css={`display: flex;`}>
               <GrCircleInformation /><h3>Brand Statement</h3>
             </div>
@@ -123,7 +126,7 @@ export default function About() {
               Full stack web/software developer with an entrepreneurial spirit, and keen sense of efficiency and time management. A passionate, goal-oriented team player that strives to always write clean, precise code focused on mobile responsive themes. Maintains a problem solving, can-do attitude and exhibits consistent eagerness to learn new technologies/techniques.
             </p>
           </Biography>
-          <Biography key={2}>
+          <Biography key={id + 6}>
             <div css={`display: flex;`}>
               <GrCode />
               <h3>Technologies</h3>
@@ -134,7 +137,7 @@ export default function About() {
             </p>
           </Biography>
         </ColumnOne>
-        <ColumnTwo key={2}>
+        <ColumnTwo key={id + 7}>
           {data.allFile.edges.map((image, key) => (
             <Image 
               key={key}
