@@ -15,7 +15,7 @@ const Nav = styled.nav`
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: relative;
-`
+`;
 const NavLink = styled(Link)`
   color: #fff;
   display: flex;
@@ -24,11 +24,11 @@ const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-`
+`;
 const SigImg = styled.img`
   width: 75px;
   margin-left: 20px;
-`
+`;
 const Bars = styled(FaBars)`
   display: none;
   color: #fff;
@@ -43,8 +43,8 @@ const Bars = styled(FaBars)`
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
-  }
-`
+  };
+`;
 const HeroBG = styled.div`
   position: absolute;
   top: 0;
@@ -54,7 +54,7 @@ const HeroBG = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-`
+`;
 const Video = styled.video`
   width: 100%;
   height: 100%; 
@@ -62,7 +62,7 @@ const Video = styled.video`
   object-fit: cover;
   filter: brightness(100%);
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-`
+`;
 const MenuLinks = styled.nav`
   display: flex;
   flex-direction: column;
@@ -87,11 +87,11 @@ const MenuLinks = styled.nav`
     &:hover ${HeroBG} {
       filter: brightness(50%)
     }
-  }
+  };
 
   li {
     margin-top: 1rem;
-  }
+  };
 
   a {
     text-decoration: none;
@@ -104,13 +104,13 @@ const MenuLinks = styled.nav`
     :hover {
       color: gray;
     }
-  }
+  };
 
   @media screen and (min-width: 769px) {
     display: none;
-  }
+  };
 
-`
+`;
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
@@ -118,8 +118,8 @@ const NavMenu = styled.div`
 
   @media screen and (max-width: 768px) {
     display: none;
-  }
-`
+  };
+`;
 const NavBtn = styled.div`
   display: flex;
   align-items: center;
@@ -127,8 +127,8 @@ const NavBtn = styled.div`
 
   @media screen and (max-width: 768px) {
     display: none;
-  }
-`
+  };
+`;
 
 const Header = () => {
   const [nav, showNav] = useState(false);
