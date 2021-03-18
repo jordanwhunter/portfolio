@@ -13,20 +13,20 @@ const AboutContainer = styled.div`
   height: 100%;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
-`
+`;
 const TopLine = styled.div`
   color: #077bf1;
   font-size: 1rem;
   padding-left: 2rem;
   margin-bottom: 0.75rem;
-`
+`;
 const Description = styled.p`
   text-align: start;
   padding-left: 2rem;
   margin-bottom: 4rem;
   font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: bold;
-`
+`;
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -35,11 +35,11 @@ const ContentWrapper = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-`
+`;
 const ColumnOne = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
-`
+`;
 const Biography = styled.div`
   padding-top: 1rem;
   padding-right: 2rem;
@@ -53,7 +53,7 @@ const Biography = styled.div`
   p {
     color: #3b3b3b;
   }
-`
+`;
 const ColumnTwo = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -63,7 +63,7 @@ const ColumnTwo = styled.div`
   @media screen and (max-width: 500px) {
     grid-template-columns: 1fr;
   }
-`
+`;
 const Image = styled(Img)`
   border-radius: 10px;
   height: 100%;
@@ -72,7 +72,7 @@ const Image = styled(Img)`
   @media screen and (max-width: 375px) {
     margin-top: 0;
   }
-`
+`;
 export default function About() {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -88,7 +88,7 @@ export default function About() {
         }
       }
     }
-  `)
+  `);
 
   return (
     <AboutContainer id="about">
@@ -145,5 +145,5 @@ export default function About() {
         </ColumnTwo>
       </ContentWrapper>
     </AboutContainer>
-  )
+  );
 };
