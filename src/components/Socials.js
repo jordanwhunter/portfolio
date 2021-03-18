@@ -61,6 +61,7 @@ export default function Socials() {
               <a 
                 href={item.src} 
                 target="_blank"
+                rel="noreferrer"
               >
                 <Icon>{item.icon}</Icon>
               </a>
