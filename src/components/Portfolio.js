@@ -108,10 +108,10 @@ const PortfolioTechnologies = styled.div`
     font-size: 12px;
   };
 `;
-const ButtonLink = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-`;
+// const ButtonLink = styled.a`
+//   text-decoration: none;
+//   cursor: pointer;
+// `;
 const ButtonWrap = styled.div`
   display: flex;
   flex-direction: row;
@@ -224,9 +224,17 @@ export default function Portfolio({ heading }) {
               </PortfolioTechnologies>
             </TextWrap>
             <ButtonWrap>
-              <ButtonLink
+              {/* <ButtonLink
                 href={`${item.node.demo}`}
                 target="_blank"
+              > */}
+              <a
+                href={`${item.node.demo}`}
+                target="_blank"
+                css={`
+                  text-decoration: none;
+                  cursor: pointer;
+                `}
               >
                 <CustomButton
                   primary="true"
@@ -234,11 +242,21 @@ export default function Portfolio({ heading }) {
                 >
                   {item.node.button1}
                 </CustomButton>
-              </ButtonLink>
+              </a>
+              {/* </ButtonLink> */}
 
-              <ButtonLink
+
+              {/* <ButtonLink
                 href={`${item.node.repo}`}
                 target="_blank"
+              > */}
+              <a
+                href={`${item.node.repo}`}
+                target="_blank"
+                css={`
+                  text-decoration: none;
+                  cursor: pointer;
+                `}
               >
                 <CustomButton
                   primary="true"
@@ -246,7 +264,8 @@ export default function Portfolio({ heading }) {
                 >
                   {item.node.button2}
                 </CustomButton>
-              </ButtonLink>
+              </a>
+              {/* </ButtonLink> */}
             </ButtonWrap>
           </PortfolioInfo>
         </PortfolioCard>
