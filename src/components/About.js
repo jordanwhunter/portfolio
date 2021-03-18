@@ -118,21 +118,21 @@ export default function About() {
       <ContentWrapper key={id + 3}>
         <ColumnOne key={id + 4}>
           <Biography key={id + 5}>
-            <div css={`display: flex;`}>
+            <div key={id + 18} css={`display: flex;`}>
               <GrCircleInformation /><h3>Brand Statement</h3>
             </div>
             
-            <p>
+            <p key={id + 19}>
               Full stack web/software developer with an entrepreneurial spirit, and keen sense of efficiency and time management. A passionate, goal-oriented team player that strives to always write clean, precise code focused on mobile responsive themes. Maintains a problem solving, can-do attitude and exhibits consistent eagerness to learn new technologies/techniques.
             </p>
           </Biography>
           <Biography key={id + 6}>
-            <div css={`display: flex;`}>
+            <div key={id + 16} css={`display: flex;`}>
               <GrCode />
               <h3>Technologies</h3>
             </div>
             
-            <p>
+            <p key={id + 17}>
               JavaScript, React, Preact, Next, Gatsby, Svelte, Node, Express, Firebase, Vercel, MongoDB, MySQL, Handlebars, jQuery, D3, GraphQL, Material-UI, CSS3, Bootstrap, Materialize, Bulma, HTML5 
             </p>
           </Biography>
