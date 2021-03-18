@@ -19,7 +19,7 @@ const EmailContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 const EmailContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -30,19 +30,19 @@ const EmailContent = styled.div`
     margin-bottom: 1rem;
     font-size: clamp(1rem, 5vw, 3rem);
     padding: 0 1rem;
-  }
+  };
 
   p {
     text-align: center;
     font-size: clamp(1rem, 2.5vw, 1rem);
     padding: 0 1rem;
     margin-bottom: 2rem;
-  }
+  };
 
   form {
     z-index: 10;
-  }
-`
+  };
+`;
 const FormWrap = styled.div`
   input {
     padding: 1rem 1.5rem;
@@ -52,7 +52,7 @@ const FormWrap = styled.div`
     border-radius: 50px;
     border: none;
     margin-right: 1rem;
-  }
+  };
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -63,9 +63,9 @@ const FormWrap = styled.div`
       margin-bottom: 1rem;
       width: 100%;
       margin-right: 0;
-    }
-  }
-`
+    };
+  };
+`;
 
 export default function Email() {
   return (
