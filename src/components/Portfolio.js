@@ -240,7 +240,7 @@ export default function Portfolio({ heading }) {
                   text-decoration: none;
                   cursor: pointer;
                 `}
-                key={Math.random()}
+                key={index}
               > */}
                 <CustomButton
                   primary="true"
@@ -265,7 +265,7 @@ export default function Portfolio({ heading }) {
                   text-decoration: none;
                   cursor: pointer;
                 `}
-                key={Math.random()}
+                key={index}
               > */}
                 <CustomButton
                   primary="true"
