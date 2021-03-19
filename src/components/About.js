@@ -161,15 +161,14 @@ export default function About() {
             src="../assets/images/profile-photo.jpg"
             alt="Profile Picture"
             placeholder="blurred"
-            layout="fixed"
-            width={300}
-            height={300}
+            layout="constrained"
+            // width={300}
+            // height={300}
             imgStyle={{
               alignContent: "center",
               alignItems: "center",
               justifyContent: "center",
               justifyItems: "center",
-              padding: "-20px",
               
             }}
           />
