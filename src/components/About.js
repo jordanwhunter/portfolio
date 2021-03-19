@@ -1,9 +1,10 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby';
+// import { useStaticQuery, graphql } from 'gatsby';
 import { GrCircleInformation, GrCode, GrDocumentImage } from "react-icons/gr"
 // import { v4 as uuidv4} from "uuid"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
+// import profilePicture from "../assets/images/profile-photo.jpg"
 
 
 const AboutContainer = styled.div`
@@ -21,7 +22,7 @@ const TopLine = styled.div`
   padding-left: 2rem;
   margin-bottom: 0.75rem;
 `;
-const Description = styled.p`
+const Description = styled.div`
   text-align: start;
   padding-left: 2rem;
   margin-bottom: 4rem;
@@ -65,34 +66,32 @@ const ColumnTwo = styled.div`
     grid-template-columns: 1fr;
   }
 `;
-const Image = styled(Img)`
-  border-radius: 10px;
-  height: 100%;
-  margin-top: -50px;
+// const Image = styled.div`
+//   border-radius: 10px;
+//   /* height: 100%; */
+//   margin-top: -50px;
 
-  @media screen and (max-width: 375px) {
-    margin-top: 0;
-  }
-`;
+//   @media screen and (max-width: 375px) {
+//     margin-top: 0;
+//   }
+// `;
 export default function About() {
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: ["profile-photo"]}}) {
-        edges {
-          node {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query MyQuery {
+  //     allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: ["profile-photo"]}}) {
+  //       edges {
+  //         node {
+  //           childImageSharp {
+  //             gatsbyImageData(layout: FIXED)
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
   
   const id = '_' + Math.random().toString(36).substr(2, 9);
-
+  
   return (
     <AboutContainer id="about">
       <TopLine key={id + 1}>
@@ -100,7 +99,8 @@ export default function About() {
       </TopLine>
       <Description key={id + 2}>
         <div css={`display: flex;`}>
-          <GrDocumentImage /><h4 css={`font-style: italic;`}>Resumes</h4>
+          <GrDocumentImage />
+          <div css={`font-style: italic;`}>Resumes</div>
         </div> 
         <div 
           css={`
@@ -109,10 +109,10 @@ export default function About() {
             margin-bottom: -40px;
           `}
         >
-          <p>
+          <div>
             <a href="https://docs.google.com/document/d/162ZfqqYxwYgeaY4fk7pf3GdtVn_Kp-ONqWOVCWzIhqo/edit?usp=sharing" target="_blank" rel="noreferrer">Resume 2021 (ATS Version)</a><br />
             <a href="https://docs.google.com/document/d/1u87owpbLG2uoPAqvoVmkuh_LEGSJuRa69OVAYm3hELU/edit?usp=sharing" target="_blank" rel="noreferrer">Resume 2021 (Styled Version)</a>
-          </p>
+          </div>
         </div>   
       </Description>
       <ContentWrapper key={id + 3}>
@@ -138,14 +138,42 @@ export default function About() {
           </Biography>
         </ColumnOne>
         <ColumnTwo key={id + 7}>
-          {data.allFile.edges.map((image, key) => (
+          {/* {data.allFile.edges.map((image, key) => (
             <Image
               id={key} 
               key={id + 15}
               src={image.node.childImageSharp.src}
               fluid={image.node.childImageSharp.fluid}
+              image={image.node.childImageSharp.gatsbyImageData}
+              css={`
+                border-radius: 10px;
+                height: 100%;
+                margin-top: -50px;
+
+                @media screen and (max-width: 375px) {
+                  margin-top: 0;
+                }
+              `}
             />
-          ))}
+          ))} */}
+          
+          <StaticImage 
+            src="../assets/images/profile-photo.jpg"
+            alt="Profile Picture"
+            placeholder="blurred"
+            layout="fixed"
+            width={300}
+            height={300}
+            imgStyle={{
+              alignContent: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              justifyItems: "center",
+              padding: "-20px",
+              
+            }}
+          />
+          
         </ColumnTwo>
       </ContentWrapper>
     </AboutContainer>
