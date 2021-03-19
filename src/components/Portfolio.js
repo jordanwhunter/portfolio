@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { Button } from "./Button"
 // import { v4 as uuidv4} from "uuid"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const PortfolioContainer = styled.div`
@@ -10,6 +10,7 @@ const PortfolioContainer = styled.div`
   padding: 5rem calc((100vw - 1300px) / 2);
   background: #fff;
   color: #fff;
+  position: relative;
 `;
 const PortfolioHeading = styled.div`
   font-size: clamp(1.5rem, 5vw, 2.5rem);
@@ -17,9 +18,9 @@ const PortfolioHeading = styled.div`
   margin-bottom: 5rem;
   color: #000;
 `;
-const PortfolioImg = styled(Img)`
-  height: 100%;
-  max-width: 100%;
+const PortfolioImg = styled.div`
+  /* height: 100%; */
+  /* max-width: 100%; */
   position: absolute;
   border-radius: 10px;
   filter: brightness(100%);
@@ -28,7 +29,7 @@ const PortfolioImg = styled(Img)`
 const PortfolioWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 60px;
   justify-items: center;
   padding: 0 2rem;
 
@@ -39,6 +40,14 @@ const PortfolioWrapper = styled.div`
   @media screen and (max-width: 868px) {
     grid-template-columns: 1fr;
   };
+
+  @media screen and (max-width: 375px) {
+    grid-gap: 0px;
+  }
+  
+  @media screen and (max-width: 280px) {
+    grid-gap: -1px;
+  }
 
 `;
 const PortfolioInfo = styled.div`
@@ -85,6 +94,18 @@ const TextWrap = styled.div`
   justify-content: center;
   align-content: center;
   width: 87%;
+
+  @media screen and (max-width: 420px) {
+    top: 350px;
+  }
+  
+  @media screen and (max-width: 396px) {
+    top: 300px;
+  }
+
+  @media screen and (max-width: 280px) {
+    top: 280px;
+  }
 `;
 const PortfolioTitle = styled.div`
   font-weight: 400;
@@ -100,6 +121,7 @@ const PortfolioDescription = styled.div`
 
   @media screen and (max-width: 280px) {
     font-size: 12px;
+    margin: 30px;
   };
 `;
 const PortfolioTechnologies = styled.div`
@@ -107,12 +129,14 @@ const PortfolioTechnologies = styled.div`
 
   @media screen and (max-width: 280px) {
     font-size: 12px;
+    top: -5px;
+    position: absolute;
   };
 `;
-const ButtonLink = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-`;
+// const ButtonLink = styled.div`
+//   text-decoration: none;
+//   cursor: pointer;
+// `;
 const ButtonWrap = styled.div`
   display: flex;
   flex-direction: row;
@@ -121,7 +145,7 @@ const ButtonWrap = styled.div`
   align-content: center;
   align-items: center;
   width: 100%;
-  height: -400px;
+  /* height: -400px; */
   z-index: 1;
   gap: 10px;
 
@@ -138,9 +162,9 @@ const CustomButton = styled(Button)`
   font-size: 14px;
   width: 100%;
   cursor: pointer;
-  top: -60px;
+  top: 425px;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 410px) {
     background: none;
     border: none;
     padding: 0 !important;
@@ -148,10 +172,19 @@ const CustomButton = styled(Button)`
     color: #fff;
     text-decoration: underline;
     cursor: pointer;
-    width: 100%;
+    width: 10%;
     font-size: 12px;
     justify-content: center;
+    top: 400px;
   };
+
+  @media screen and (max-width: 375px) {
+    top: 350px;
+  }
+  
+  @media screen and (max-width: 280px) {
+    top: 270px;
+  }
 `;
 const CustomP = styled.p`
   font-size: 12px;
@@ -173,9 +206,11 @@ export default function Portfolio({ heading }) {
             repo
             img {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  width: 1000
+                )
               }
             }
           }
@@ -191,12 +226,27 @@ export default function Portfolio({ heading }) {
     data.allPortfolioJson.edges.forEach((item, index) => {
       portfolioArray.push(
         <PortfolioCard key={index}>
-          <PortfolioImg 
+          {/* <PortfolioImg 
             src={item.node.img.childImageSharp.fluid.src}
             fluid={item.node.img.childImageSharp.fluid}
             alt={item.node.alt}
             key={id + 8}
-          />
+          /> */}
+          <PortfolioImg>
+            <GatsbyImage 
+              // src={item.node.img.childImageSharp.gatsbyImageData}
+              image={item.node.img.childImageSharp.gatsbyImageData}
+              alt={item.node.alt}
+              key={id + 8}
+              imgStyle={{
+                // objectFit: "contain",
+                borderRadius: "10px",
+                height: "88%",
+                position: "absolute",
+                gridGap: "10px"
+              }}
+            />
+          </PortfolioImg>
           <PortfolioInfo key={id + 9}>
             <TextWrap key={id + 14}>
               <PortfolioTitle
@@ -213,7 +263,6 @@ export default function Portfolio({ heading }) {
                 key={id + 16}
                 css={`
                   margin-top: -300px;
-                  
                 `}
               >
                 <strong><u>Description:</u></strong> <br />
@@ -231,54 +280,48 @@ export default function Portfolio({ heading }) {
               </PortfolioTechnologies>
             </TextWrap>
             <ButtonWrap key={id + 10}>
-              <ButtonLink
-                href={`${item.node.demo}`}
-                target="_blank"
-                key={id + 11}
-              >
-              {/* <a
-                href={`${item.node.demo}`}
-                target="_blank"
-                css={`
-                  text-decoration: none;
-                  cursor: pointer;
-                `}
-                key={index}
-              > */}
-                <CustomButton
-                  primary="true"
-                  round="true"
-                  key={id + 12}
+              <div key={id + 20}> 
+                <a
+                  href={`${item.node.demo}`}
+                  target="_blank"
+                  css={`
+                    text-decoration: none;
+                    cursor: pointer;
+                  `}
+                  key={id + 11}
+                  rel="noreferrer"
                 >
-                  {item.node.button1}
-                </CustomButton>
-              {/* </a> */}
-              </ButtonLink>
+                  <CustomButton
+                    primary="true"
+                    round="true"
+                    key={id + 12}
+                  >
+                    {item.node.button1}
+                  </CustomButton>
+                </a>
+              </div>
 
 
-              <ButtonLink
-                href={`${item.node.repo}`}
-                target="_blank"
-                key={id + 13}
-              >
-              {/* <a
-                href={`${item.node.repo}`}
-                target="_blank"
-                css={`
-                  text-decoration: none;
-                  cursor: pointer;
-                `}
-                key={index}
-              > */}
-                <CustomButton
-                  primary="true"
-                  round="true"
-                  key={id + 14}
+              <div key={id + 21}>
+                <a
+                  href={`${item.node.repo}`}
+                  target="_blank"
+                  css={`
+                    text-decoration: none;
+                    cursor: pointer;
+                  `}
+                  key={id + 13}
+                  rel="noreferrer"
                 >
-                  {item.node.button2}
-                </CustomButton>
-              {/* </a> */}
-              </ButtonLink>
+                  <CustomButton
+                    primary="true"
+                    round="true"
+                    key={id + 14}
+                  >
+                    {item.node.button2}
+                  </CustomButton>
+                </a>
+              </div>
             </ButtonWrap>
           </PortfolioInfo>
         </PortfolioCard>
