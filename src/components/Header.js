@@ -5,7 +5,7 @@ import { menuData } from "../data/MenuData"
 import { Button } from "./Button"
 import styled from "styled-components"
 import signature from "../assets/images/signature.png"
-import video from "../assets/videos/hero-video.mp4"
+// import video from "../assets/videos/hero-video.mp4"
 
 const Nav = styled.nav`
   background: transparent;
@@ -15,6 +15,7 @@ const Nav = styled.nav`
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: relative;
+  overflow-x: hidden;
 `;
 const NavLink = styled(Link)`
   color: #fff;
@@ -28,6 +29,14 @@ const NavLink = styled(Link)`
 const SigImg = styled.img`
   width: 75px;
   margin-left: 20px;
+
+  @media screen and (max-width: 375px) {
+    width: 50px;
+  }
+
+  @media screen and (max-width: 280px) {
+    display: none;
+  }
 `;
 const Bars = styled(FaBars)`
   display: none;
@@ -55,23 +64,24 @@ const HeroBG = styled.div`
   height: 100%;
   overflow: hidden;
 `;
-const Video = styled.video`
-  width: 100%;
-  height: 100%; 
-  -o-object-fit: cover;
-  object-fit: cover;
-  filter: brightness(100%);
-  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-`;
+// const Video = styled.video`
+//   width: 100%;
+//   height: 100%; 
+//   -o-object-fit: cover;
+//   object-fit: cover;
+//   filter: brightness(100%);
+//   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+// `;
 const MenuLinks = styled.nav`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 50vh;
+  max-height: 75px;
+  height: 100vh;
   width: 100vw;
-  background: transparent;
+  background: #143441;
   position: absolute;
   top: 0;
   right: 0;
@@ -89,8 +99,44 @@ const MenuLinks = styled.nav`
     }
   };
 
-  li {
-    margin-top: 1rem;
+  span {
+    display: flex;
+    z-index: 5;
+    margin-top: 0;
+
+    @media screen and (max-width: 540px) {
+      margin-right: 40px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 40px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 35px;
+      }
+      
+      @media screen and (max-width: 540px) {
+        font-size: 25px;
+      }
+      
+      @media screen and (max-width: 414px) {
+        font-size: 20px;
+      }
+      
+      @media screen and (max-width: 375px) {
+        font-size: 18px;
+      }
+      
+      @media screen and (max-width: 320px) {
+        font-size: 14px;
+      }
+      
+      @media screen and (max-width: 280px) {
+        font-size: 12px;
+      }
+
+    }
   };
 
   a {
@@ -126,7 +172,23 @@ const NavBtn = styled.div`
   margin-right: 24px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    margin-right: 325px;
+  };
+  
+  @media screen and (max-width: 680px) {
+    margin-right: 240px;
+  };
+  
+  @media screen and (max-width: 540px) {
+    margin-right: 210px;
+  };
+  
+  @media screen and (max-width: 500px) {
+    margin-right: 140px;
+  };
+  
+  @media screen and (max-width: 375px) {
+    margin-right: 115px;
   };
 `;
 
@@ -140,7 +202,7 @@ const Header = () => {
       </NavLink>
       <Bars onClick={() => showNav(!nav)}/>
       <MenuLinks nav={nav}>
-        <HeroBG>
+        {/* <HeroBG>
           <Video
             src={video}
             type="video/mp4"
@@ -149,21 +211,29 @@ const Header = () => {
             muted
             playsInline
           />
-        </HeroBG>
-        <ul>
-          <li>
-            <a href="/#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="/#about">About</a>
-          </li>
-          <li>
-            <a href="/#socials">Socials</a>
-          </li>
-          <li>
-            <a href="/#newsletter">Newsletter</a>
-          </li>
-        </ul>
+        </HeroBG> */}
+        
+          <span>
+            <a href="/#portfolio">
+              <p>Portfolio &nbsp;</p>
+            </a>
+          
+          
+            <a href="/#about">
+              <p>About &nbsp;</p>
+            </a>
+          
+          
+            <a href="/#socials">
+              <p>Socials &nbsp;</p>
+            </a>
+          
+          
+            <a href="/#newsletter">
+              <p>Newsletter &nbsp;</p>
+            </a>
+          </span>
+       
       </MenuLinks>
       <NavMenu>
         {menuData.map((item, index) => (
