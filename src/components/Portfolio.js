@@ -11,6 +11,12 @@ const PortfolioContainer = styled.div`
   background: #fff;
   color: #fff;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const PortfolioHeading = styled.div`
   font-size: clamp(1.5rem, 5vw, 2.5rem);
@@ -39,6 +45,14 @@ const PortfolioWrapper = styled.div`
   
   @media screen and (max-width: 868px) {
     grid-template-columns: 1fr;
+  };
+  
+  @media screen and (max-width: 768px) {
+    grid-gap: 550px;
+  };
+  
+  @media screen and (max-width: 540px) {
+    grid-gap: 150px;
   };
 
   @media screen and (max-width: 375px) {
@@ -115,6 +129,7 @@ const PortfolioTitle = styled.div`
   @media screen and (max-width: 280px) {
     font-size: 12px;
   };
+  
 `;
 const PortfolioDescription = styled.div`
   font-size: 1rem;
@@ -126,6 +141,8 @@ const PortfolioDescription = styled.div`
 `;
 const PortfolioTechnologies = styled.div`
   font-size: 1rem;
+
+
 
   @media screen and (max-width: 280px) {
     font-size: 12px;
