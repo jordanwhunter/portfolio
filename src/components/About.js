@@ -158,12 +158,12 @@ export default function About() {
           ))} */}
           
           <StaticImage 
-            src="../assets/images/profile-photo.jpg"
-            alt="Profile Picture"
+            src="../assets/images/headshot.jpg"
+            alt="Head Shot"
             placeholder="blurred"
             layout="constrained"
             // width={300}
-            // height={300}
+            // height={500}
             imgStyle={{
               alignContent: "center",
               alignItems: "center",
