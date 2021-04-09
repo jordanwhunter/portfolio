@@ -133,7 +133,7 @@ export default function About() {
             </div>
             
             <p key={id + 17}>
-              JavaScript, TypeScript, CSS3, HTML5, React, Preact, Next, Gatsby, Svelte, Node, Express, Firebase, Vercel, MongoDB, MySQL, Handlebars, jQuery, D3, GraphQL, Material-UI, Bootstrap, Materialize, Bulma 
+              JavaScript, TypeScript, CSS3, HTML5, React, Preact, Next, Gatsby, Svelte, Node, Express, Deno, Firebase, Vercel, MongoDB, MySQL, Handlebars, jQuery, D3, GraphQL, Material-UI, Bootstrap, Materialize, Bulma 
             </p>
             <br /><br />
             <StaticImage 
