@@ -135,6 +135,22 @@ export default function About() {
             <p key={id + 17}>
               JavaScript, TypeScript, CSS3, HTML5, React, Preact, Next, Gatsby, Svelte, Node, Express, Firebase, Vercel, MongoDB, MySQL, Handlebars, jQuery, D3, GraphQL, Material-UI, Bootstrap, Materialize, Bulma 
             </p>
+            <br /><br />
+            <StaticImage 
+              src="../assets/images/technologies.png"
+              alt="Head Shot"
+              placeholder="blurred"
+              layout="constrained"
+              // width={300}
+              // height={500}
+              imgStyle={{
+                alignContent: "center",
+                alignItems: "center",
+                justifyContent: "center",
+                justifyItems: "center",
+                borderRadius: "20px",
+              }}
+            />
           </Biography>
         </ColumnOne>
         <ColumnTwo key={id + 7}>
@@ -156,7 +172,7 @@ export default function About() {
               `}
             />
           ))} */}
-          
+
           <StaticImage 
             src="../assets/images/headshot.jpg"
             alt="Head Shot"
@@ -172,7 +188,7 @@ export default function About() {
               borderRadius: "20px",
             }}
           />
-          
+
         </ColumnTwo>
       </ContentWrapper>
     </AboutContainer>
