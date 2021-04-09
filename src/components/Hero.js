@@ -78,6 +78,10 @@ const HeroH1 = styled.h1`
   letter-spacing: 3px;
   font-weight: bold;
   padding: 0 1rem;
+
+  @media screen and (width: 653px) {
+    margin-top: 40px;
+  }
 `;
 const HeroP = styled.p`
   font-size: clamp(1rem, 3vw, 3rem);
