@@ -15,12 +15,22 @@ const AboutContainer = styled.div`
   height: 100%;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+
+  @media screen and (width: 1024px) {
+    margin-top: 20px;
+  }
+  
+  /* @media screen and (width: 812px) {
+    margin-top: 420px;
+  } */
 `;
 const TopLine = styled.div`
   color: #077bf1;
   font-size: 1rem;
   padding-left: 2rem;
   margin-bottom: 0.75rem;
+
+ 
 `;
 const Description = styled.div`
   text-align: start;
@@ -130,6 +140,42 @@ export default function About() {
             key={id + 6} 
             css={`
               margin-top: -32px;
+
+              @media screen and (width: 1366px) {
+                margin-top: -120px;
+              }
+
+              @media screen and (width: 812px) {
+                margin-top: -20px;
+              }
+
+              @media screen and (width: 768px) {
+                margin-top: -70px;
+              }
+
+              @media screen and (width: 736px) {
+                margin-top: -70px;
+              }
+              
+              @media screen and (width: 731px) {
+                margin-top: -70px;
+              }
+
+              @media screen and (width: 720px) {
+                margin-top: -70px;
+              }
+              
+              @media screen and (width: 667px) {
+                margin-top: -70px;
+              }
+              
+              @media screen and (width: 640px) {
+                margin-top: -70px;
+              }
+              
+              @media screen and (width: 568px) {
+                margin-top: -60px;
+              }
 
               @media screen and (max-width: 414px) {
                 margin-top: -25px;
