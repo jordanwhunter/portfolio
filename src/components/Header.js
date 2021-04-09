@@ -116,6 +116,14 @@ const MenuLinks = styled.nav`
         font-size: 35px;
       }
       
+      @media screen and (width: 653px) {
+        font-size: 30px;
+      }
+
+      @media screen and (width: 640px) {
+        font-size: 30px;
+      }
+      
       @media screen and (max-width: 540px) {
         font-size: 25px;
       }
@@ -175,8 +183,28 @@ const NavBtn = styled.div`
     margin-right: 325px;
   };
   
+  @media screen and (max-width: 736px) {
+    margin-right: 295px;
+  };
+
+  @media screen and (max-width: 720px) {
+    margin-right: 295px;
+  };
+  
   @media screen and (max-width: 680px) {
     margin-right: 240px;
+  };
+  
+  @media screen and (max-width: 667px) {
+    margin-right: 260px;
+  };
+  
+  @media screen and (width: 640px) {
+    margin-right: 250px;
+  };
+
+  @media screen and (width: 568px) {
+    margin-right: 215px;
   };
   
   @media screen and (max-width: 540px) {
