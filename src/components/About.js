@@ -126,7 +126,28 @@ export default function About() {
               Full stack web/software developer with an entrepreneurial spirit, and keen sense of efficiency and time management. A passionate, goal-oriented team player that strives to always write clean, precise code focused on mobile responsive themes. Maintains a problem solving, can-do attitude and exhibits consistent eagerness to learn new technologies/techniques.
             </p>
           </Biography>
-          <Biography key={id + 6}>
+          <Biography 
+            key={id + 6} 
+            css={`
+              margin-top: -32px;
+
+              @media screen and (max-width: 414px) {
+                margin-top: -25px;
+              }
+
+              @media screen and (max-width: 375px) {
+                margin-top: -20px;
+              }
+              
+              @media screen and (max-width: 320px) {
+                margin-top: -8px;
+              }
+              
+              @media screen and (max-width: 280px) {
+                margin-top: -10px;
+              }
+            `}
+          >
             <div key={id + 16} css={`display: flex;`}>
               <GrCode />
               <h3>Technologies</h3>
@@ -138,7 +159,7 @@ export default function About() {
             <br /><br />
             <StaticImage 
               src="../assets/images/technologies.png"
-              alt="Head Shot"
+              alt="Technologies"
               placeholder="blurred"
               layout="constrained"
               // width={300}
