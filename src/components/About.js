@@ -169,7 +169,6 @@ export default function About() {
                 alignItems: "center",
                 justifyContent: "center",
                 justifyItems: "center",
-                borderRadius: "20px",
               }}
             />
           </Biography>
