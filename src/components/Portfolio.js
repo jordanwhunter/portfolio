@@ -42,13 +42,63 @@ const PortfolioWrapper = styled.div`
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
   };
+
+  @media screen and (width: 1024px) {
+    grid-gap:90px;
+  };
   
   @media screen and (max-width: 868px) {
     grid-template-columns: 1fr;
   };
   
-  @media screen and (max-width: 768px) {
-    grid-gap: 550px;
+  @media screen and (width: 823px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+
+  @media screen and (width: 812px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+  
+  @media screen and (width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+  
+  @media screen and (width: 736px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+  
+  @media screen and (width: 731px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+
+  @media screen and (width: 720px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+  
+  @media screen and (width: 667px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+  
+  @media screen and (width: 653px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+  
+  @media screen and (width: 640px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  };
+  
+  @media screen and (width: 568px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
   };
   
   @media screen and (max-width: 540px) {
@@ -59,7 +109,7 @@ const PortfolioWrapper = styled.div`
     grid-gap: 0px;
   }
   
-  @media screen and (max-width: 280px) {
+  @media screen and (width: 280px) {
     grid-gap: -1px;
   }
 
@@ -109,6 +159,39 @@ const TextWrap = styled.div`
   align-content: center;
   width: 87%;
 
+  
+  @media screen and (width: 768px) {
+    top: 350px;
+  }
+  
+  @media screen and (width: 736px) {
+    top: 320px;
+  }
+
+  @media screen and (width: 731px) {
+    top: 320px;
+  }
+
+  @media screen and (width: 720px) {
+    top: 320px;
+  }
+  
+  @media screen and (width: 667px) {
+    top: 300px;
+  }
+
+  @media screen and (width: 653px) {
+    top: 300px;
+  }
+  
+  @media screen and (width: 640px) {
+    top: 300px;
+  }
+  
+  @media screen and (width: 568px) {
+    top: 300px;
+  }
+
   @media screen and (max-width: 420px) {
     top: 350px;
   }
@@ -126,7 +209,15 @@ const PortfolioTitle = styled.div`
   font-size: 1rem;
   margin-left: 0.5rem;
 
-  @media screen and (max-width: 280px) {
+  @media screen and (max-width: 568px) {
+    font-size: 12px;
+  };
+  
+  @media screen and (width: 375px) {
+    font-size: 1rem;
+  };
+
+  @media screen and (max-width: 320px) {
     font-size: 12px;
   };
   
@@ -134,7 +225,12 @@ const PortfolioTitle = styled.div`
 const PortfolioDescription = styled.div`
   font-size: 1rem;
 
-  @media screen and (max-width: 280px) {
+  @media screen and (width: 568px) {
+    font-size: 12px;
+    margin: 30px;
+  };
+
+  @media screen and (max-width: 320px) {
     font-size: 12px;
     margin: 30px;
   };
@@ -144,7 +240,13 @@ const PortfolioTechnologies = styled.div`
 
 
 
-  @media screen and (max-width: 280px) {
+  @media screen and (width: 568px) {
+    font-size: 12px;
+    top: -5px;
+    position: absolute;
+  };
+
+  @media screen and (max-width: 320px) {
     font-size: 12px;
     top: -5px;
     position: absolute;
@@ -166,10 +268,51 @@ const ButtonWrap = styled.div`
   z-index: 1;
   gap: 10px;
 
+  @media screen and (width: 768px) {
+    top: -70px;
+  }
+  
+  @media screen and (width: 736px) {
+    top: -70px;
+  }
+  
+  @media screen and (width: 731px) {
+    top: -70px;
+  }
+
+  @media screen and (width: 720px) {
+    top: -70px;
+  }
+  
+  @media screen and (width: 667px) {
+    top: -110px;
+  }
+
+  @media screen and (width: 653px) {
+    top: -110px;
+  }
+  
+  @media screen and (width: 640px) {
+    top: -110px;
+  }
+  
+  @media screen and (width: 568px) {
+    top: -120px;
+  }
+
+  @media screen and (width: 414px) {
+    top: -60px;
+  }
+  
+  @media screen and (width: 320px) {
+    top: -50px;
+  }
+  
   @media screen and (max-width: 280px) {
     padding: 0 1rem;
     justify-content: center;
     align-content: center;
+    top: -20px;
   };
 `;
 const CustomButton = styled(Button)`
@@ -181,6 +324,20 @@ const CustomButton = styled(Button)`
   cursor: pointer;
   top: 425px;
 
+  @media screen and (max-width: 568px) {
+    background: none;
+    border: none;
+    padding: 0 !important;
+    font-family: arial, sans-serif;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    width: 10%;
+    font-size: 12px;
+    justify-content: center;
+    top: 400px;
+  };
+  
   @media screen and (max-width: 410px) {
     background: none;
     border: none;
