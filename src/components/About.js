@@ -133,7 +133,7 @@ export default function About() {
             </div>
             
             <p key={id + 19}>
-              Full stack web/software developer with an entrepreneurial spirit, and keen sense of efficiency and time management. A passionate, goal-oriented team player that strives to always write clean, precise code focused on mobile responsive themes. Maintains a problem solving, can-do attitude and exhibits consistent eagerness to learn new technologies/techniques.
+              Front-end web developer with an entrepreneurial spirit, and keen sense of efficiency and time management. A passionate, goal-oriented team player that strives to always write clean, precise code focused on mobile responsive themes. Maintains a problem solving, can-do attitude and exhibits consistent eagerness to learn new technologies/techniques.
             </p>
           </Biography>
           <Biography 
@@ -150,7 +150,7 @@ export default function About() {
               }
 
               @media screen and (width: 768px) {
-                margin-top: -70px;
+                margin-top: 25px;
               }
 
               @media screen and (width: 736px) {
@@ -178,19 +178,19 @@ export default function About() {
               }
 
               @media screen and (max-width: 414px) {
-                margin-top: -25px;
+                margin-top: 25px;
               }
 
               @media screen and (max-width: 375px) {
-                margin-top: -20px;
+                margin-top: 25px;
               }
               
               @media screen and (max-width: 320px) {
-                margin-top: -8px;
+                margin-top: 20px;
               }
               
               @media screen and (max-width: 280px) {
-                margin-top: -10px;
+                margin-top: 45px;
               }
             `}
           >
@@ -200,23 +200,8 @@ export default function About() {
             </div>
             
             <p key={id + 17}>
-              JavaScript, TypeScript, CSS3, HTML5, React, Preact, Next, Gatsby, Svelte, Node, Express, Deno, Firebase, Vercel, MongoDB, MySQL, Handlebars, jQuery, D3, GraphQL, Material-UI, Bootstrap, Materialize, Bulma 
+              React, JavaScript, CSS3, HTML5 
             </p>
-            <br /><br />
-            <StaticImage 
-              src="../assets/images/technologies.png"
-              alt="Technologies"
-              placeholder="blurred"
-              layout="constrained"
-              // width={300}
-              // height={500}
-              imgStyle={{
-                alignContent: "center",
-                alignItems: "center",
-                justifyContent: "center",
-                justifyItems: "center",
-              }}
-            />
           </Biography>
         </ColumnOne>
         <ColumnTwo key={id + 7}>

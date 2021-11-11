@@ -108,7 +108,7 @@ export default function Hero() {
             Jordan Hunter
           </HeroH1>
           <HeroP>
-            An avid full-stack developer residing in New York City. 
+            An avid front-end developer residing in New York City. 
           </HeroP>
           <Button
             primary="true"
