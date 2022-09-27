@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react"
 // import { useStaticQuery, graphql } from 'gatsby';
 import { GrCircleInformation, GrCode, GrDocumentImage } from "react-icons/gr"
 // import { v4 as uuidv4} from "uuid"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 // import profilePicture from "../assets/images/profile-photo.jpg"
-
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -19,26 +18,24 @@ const AboutContainer = styled.div`
   @media screen and (width: 1024px) {
     margin-top: 20px;
   }
-  
+
   /* @media screen and (width: 812px) {
     margin-top: 420px;
   } */
-`;
+`
 const TopLine = styled.div`
   color: #077bf1;
   font-size: 1rem;
   padding-left: 2rem;
   margin-bottom: 0.75rem;
-
- 
-`;
+`
 const Description = styled.div`
   text-align: start;
   padding-left: 2rem;
   margin-bottom: 4rem;
   font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: bold;
-`;
+`
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -47,11 +44,11 @@ const ContentWrapper = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-`;
+`
 const ColumnOne = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
-`;
+`
 const Biography = styled.div`
   padding-top: 1rem;
   padding-right: 2rem;
@@ -65,7 +62,7 @@ const Biography = styled.div`
   p {
     color: #3b3b3b;
   }
-`;
+`
 const ColumnTwo = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -75,7 +72,7 @@ const ColumnTwo = styled.div`
   @media screen and (max-width: 500px) {
     grid-template-columns: 1fr;
   }
-`;
+`
 // const Image = styled.div`
 //   border-radius: 10px;
 //   /* height: 100%; */
@@ -99,20 +96,28 @@ export default function About() {
   //     }
   //   }
   // `);
-  
-  const id = '_' + Math.random().toString(36).substr(2, 9);
-  
+
+  const id = "_" + Math.random().toString(36).substr(2, 9)
+
   return (
     <AboutContainer id="about">
-      <TopLine key={id + 1}>
-        About Me
-      </TopLine>
+      <TopLine key={id + 1}>About Me</TopLine>
       <Description key={id + 2}>
-        <div css={`display: flex;`}>
+        <div
+          css={`
+            display: flex;
+          `}
+        >
           <GrDocumentImage />
-          <div css={`font-style: italic;`}>Resumes</div>
-        </div> 
-        <div 
+          <div
+            css={`
+              font-style: italic;
+            `}
+          >
+            Resumes
+          </div>
+        </div>
+        <div
           css={`
             display: flex;
             font-size: 14px;
@@ -120,24 +125,48 @@ export default function About() {
           `}
         >
           <div>
-            <a href="https://docs.google.com/document/d/162ZfqqYxwYgeaY4fk7pf3GdtVn_Kp-ONqWOVCWzIhqo/edit?usp=sharing" target="_blank" rel="noreferrer">Resume 2021 (ATS Version)</a><br />
-            <a href="https://docs.google.com/document/d/1u87owpbLG2uoPAqvoVmkuh_LEGSJuRa69OVAYm3hELU/edit?usp=sharing" target="_blank" rel="noreferrer">Resume 2021 (Styled Version)</a>
+            <a
+              href="https://docs.google.com/document/d/162ZfqqYxwYgeaY4fk7pf3GdtVn_Kp-ONqWOVCWzIhqo/edit?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume 2022 (ATS Version)
+            </a>
+            <br />
+            <a
+              href="https://docs.google.com/document/d/1u87owpbLG2uoPAqvoVmkuh_LEGSJuRa69OVAYm3hELU/edit?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume 2022 (Styled Version)
+            </a>
           </div>
-        </div>   
+        </div>
       </Description>
       <ContentWrapper key={id + 3}>
         <ColumnOne key={id + 4}>
           <Biography key={id + 5}>
-            <div key={id + 18} css={`display: flex;`}>
-              <GrCircleInformation /><h3>Brand Statement</h3>
+            <div
+              key={id + 18}
+              css={`
+                display: flex;
+              `}
+            >
+              <GrCircleInformation />
+              <h3>Brand Statement</h3>
             </div>
-            
+
             <p key={id + 19}>
-              Front-end web developer with an entrepreneurial spirit, and keen sense of efficiency and time management. A passionate, goal-oriented team player that strives to always write clean, precise code focused on mobile responsive themes. Maintains a problem solving, can-do attitude and exhibits consistent eagerness to learn new technologies/techniques.
+              Front-end web developer with an entrepreneurial spirit, and keen
+              sense of efficiency and time management. A passionate,
+              goal-oriented team player that strives to always write clean,
+              precise code focused on mobile responsive themes. Maintains a
+              problem solving, can-do attitude and exhibits consistent eagerness
+              to learn new technologies/techniques.
             </p>
           </Biography>
-          <Biography 
-            key={id + 6} 
+          <Biography
+            key={id + 6}
             css={`
               margin-top: -32px;
 
@@ -156,7 +185,7 @@ export default function About() {
               @media screen and (width: 736px) {
                 margin-top: -70px;
               }
-              
+
               @media screen and (width: 731px) {
                 margin-top: -70px;
               }
@@ -164,15 +193,15 @@ export default function About() {
               @media screen and (width: 720px) {
                 margin-top: -70px;
               }
-              
+
               @media screen and (width: 667px) {
                 margin-top: -70px;
               }
-              
+
               @media screen and (width: 640px) {
                 margin-top: -70px;
               }
-              
+
               @media screen and (width: 568px) {
                 margin-top: -60px;
               }
@@ -184,24 +213,27 @@ export default function About() {
               @media screen and (max-width: 375px) {
                 margin-top: 25px;
               }
-              
+
               @media screen and (max-width: 320px) {
                 margin-top: 20px;
               }
-              
+
               @media screen and (max-width: 280px) {
                 margin-top: 45px;
               }
             `}
           >
-            <div key={id + 16} css={`display: flex;`}>
+            <div
+              key={id + 16}
+              css={`
+                display: flex;
+              `}
+            >
               <GrCode />
               <h3>Technologies</h3>
             </div>
-            
-            <p key={id + 17}>
-              React, JavaScript, CSS3, HTML5 
-            </p>
+
+            <p key={id + 17}>React, Next.JS, JavaScript, CSS3, HTML5</p>
           </Biography>
         </ColumnOne>
         <ColumnTwo key={id + 7}>
@@ -224,7 +256,7 @@ export default function About() {
             />
           ))} */}
 
-          <StaticImage 
+          <StaticImage
             src="../assets/images/headshot.jpg"
             alt="Head Shot"
             placeholder="blurred"
@@ -239,9 +271,8 @@ export default function About() {
               borderRadius: "20px",
             }}
           />
-
         </ColumnTwo>
       </ContentWrapper>
     </AboutContainer>
-  );
-};
+  )
+}
