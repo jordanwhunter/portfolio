@@ -130,7 +130,7 @@ export default function About() {
               target="_blank"
               rel="noreferrer"
             >
-              Resume 2022 (ATS Version)
+              Resume 2023 (ATS Version)
             </a>
             <br />
             <a
@@ -138,7 +138,7 @@ export default function About() {
               target="_blank"
               rel="noreferrer"
             >
-              Resume 2022 (Styled Version)
+              Resume 2023 (Styled Version)
             </a>
           </div>
         </div>
